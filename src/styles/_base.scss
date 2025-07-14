@@ -1,0 +1,9 @@
+@use "reset";
+@use "font";
+
+body {
+  direction: rtl;
+  background-color: var(--background-color);
+  font-size: var(--font-size-base);
+  font-family: "IRANSans";
+}
