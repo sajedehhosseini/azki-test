@@ -10,7 +10,7 @@ export default function MainLayout({children}: Readonly<{ children: React.ReactN
                 {children}
             </main>
             <img
-                class={styles.carGreen}
+                className={styles.carGreen}
                 src="/svg/car-green.svg"
                 alt="car-green"
             />
