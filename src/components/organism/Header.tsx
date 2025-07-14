@@ -4,7 +4,7 @@ import UserHeaderProfile from "@/components/molecule/UserHeaderProfile";
 
 export default function Header() {
     return (
-        <header className={"flex justify-between px-8 py-5"}>
+        <header className={"flex justify-between"}>
             <Link href="/" >
                 <Logo/>
             </Link>
