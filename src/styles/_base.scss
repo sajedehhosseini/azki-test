@@ -1,8 +1,13 @@
 @use "reset";
 @use "font";
 
+html{
+  height: 100%;
+}
+
 body {
   direction: rtl;
+  height: 100%;
   background-color: var(--background-color);
   font-size: var(--font-size-base);
   font-family: "IRANSans";

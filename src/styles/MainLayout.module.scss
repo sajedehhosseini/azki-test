@@ -1,0 +1,45 @@
+.layout {
+  position: relative;
+  height: 100%;
+  padding: 1rem 2rem;
+
+  .carGreen {
+    position: absolute;
+    bottom: 100px;
+    left: 16px;
+    max-width: 75%;
+  }
+}
+
+@media (min-width: 768px) {
+  .layout {
+    .carGreen {
+      max-width: 50%;
+    }
+
+    &:after {
+      position: absolute;
+      content: '';
+      width: 38%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      background-color: #FFFBEB;
+      z-index: -1;
+    }
+  }
+}
+
+
+@media (min-width: 1024px) {
+  .layout {
+    .carGreen {
+      max-width: 40%;
+      left: 50px;
+      bottom: 50px;
+    }
+    &:after {
+      width: 30%;
+    }
+  }
+}
