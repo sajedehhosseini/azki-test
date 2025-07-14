@@ -5,17 +5,19 @@ type TCols = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
 type TColProps = {
     children: React.ReactNode;
     className?: string;
+    xs?: TCols;
     sm?: TCols;
     md?: TCols;
     lg?: TCols;
     xl?: TCols;
 }
 
-export default function Col({children, className = "", sm, md, lg}: TColProps) {
+export default function Col({children, className = "", xs = 12, sm, md, lg}: TColProps) {
+    const xsClass: string = xs ? `${widthMap[xs] || ""}` : "w-full";
     const smClass: string = sm ? `sm:${widthMap[sm] || ""}` : "";
     const mdClass: string = md ? `md:${widthMap[md] || ""}` : "";
     const lgClass: string = lg ? `lg:${widthMap[lg] || ""}` : "";
-    const classes: string = [smClass, mdClass, lgClass, 'w-full'].join(' ').trim()
+    const classes: string = [xsClass,smClass, mdClass, lgClass].join(' ').trim()
 
     return (
         <div className={`py-2 sm:p-2 md:p-3 ${classes} ${className}`}>

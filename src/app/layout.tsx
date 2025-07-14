@@ -2,6 +2,7 @@ import React from "react";
 import type {Metadata} from "next";
 import MainLayout from "@/components/template/MainLayout";
 import "@/styles/index.scss";
+import ReduxProvider from "@/store/ReduxProvider";
 
 
 export const metadata: Metadata = {
@@ -13,9 +14,11 @@ export default function RootLayout({children}: Readonly<{ children: React.ReactN
     return (
         <html lang="en">
         <body>
-        <MainLayout>
-            {children}
-        </MainLayout>
+        <ReduxProvider>
+            <MainLayout>
+                {children}
+            </MainLayout>
+        </ReduxProvider>
         </body>
         </html>
     );
