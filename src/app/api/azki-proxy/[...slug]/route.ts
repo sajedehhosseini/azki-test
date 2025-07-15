@@ -26,7 +26,8 @@ export async function GET(req: NextRequest) {
             "application/octet-stream";
 
         // default cache for 1 day
-        let cacheControl = "public, max-age=86400, immutable";
+        let cacheControl = "public, no-cache, immutable";
+        // let cacheControl = "public, max-age=86400, immutable";
         if (path.includes("fonts")) {
             //change cache to 7 day for fonts
             cacheControl = "public, max-age=604800, immutable";

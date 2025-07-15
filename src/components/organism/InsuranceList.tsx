@@ -1,5 +1,5 @@
-import InsuranceItemButton from "@/components/molecule/InsuranceItemButton";
 import Link from "next/link";
+import InsuranceItemButton from "@/components/molecule/InsuranceItemButton";
 
 export default function InsuranceList({data}) {
     return data.map(insuranceItem => {

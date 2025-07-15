@@ -28,41 +28,28 @@ export default function RegisterForm({onSubmit, isPending}: TRegisterFormProps) 
 
     return (
         <FormProvider {...methods}>
-            <form onSubmit={methods.handleSubmit(onSubmit)}>
+            <form onSubmit={methods.handleSubmit(onSubmit)} className={"flex justify-center"}>
                 <Row className={"max-w-[570px]"}>
                     <Col>
-                        <h1 className="text-center text-lg md:text-start md:text-2xl font-bold">
+                        <h1 className="text-center text-lg sm:text-start md:text-2xl font-bold">
                             ثبت نام
                         </h1>
                     </Col>
-                    <Col md={6}>
-                        <RHFControlledInput
-                            name="firstName"
-                            placeholder="نام"
-                        />
+                    <Col sm={6}>
+                        <RHFControlledInput name="firstName" placeholder="نام"/>
                     </Col>
-                    <Col md={6}>
-                        <RHFControlledInput
-                            name="lastName"
-                            placeholder="نام خانوادگی"
-                        />
+                    <Col sm={6}>
+                        <RHFControlledInput name="lastName" placeholder="نام خانوادگی"/>
                     </Col>
                     <Col>
-                        <RHFControlledInput
-                            name="phoneNumber"
-                            placeholder="شماره موبایل"
-                        />
+                        <RHFControlledInput name="phoneNumber" placeholder="شماره موبایل"/>
                     </Col>
                     <Col>
-                        <RHFControlledInput
-                            name="password"
-                            type="password"
-                            autoComplete="new-password"
-                            placeholder="رمز عبور"
-                        />
+                        <RHFControlledInput name="password" type="password" autoComplete="new-password"
+                                            placeholder="رمز عبور"/>
                     </Col>
 
-                    <Col className={"flex justify-center md:justify-end mt-3"}>
+                    <Col className={"flex justify-center sm:justify-end mt-3"}>
                         <Button
                             type="submit"
                             disabled={isPending || !methods.formState.isValid}

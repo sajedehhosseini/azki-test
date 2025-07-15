@@ -14,3 +14,9 @@ export async function registerAction(data: TRegisterFormInputs) {
 
     return {success: true};
 }
+
+export async function logoutAction() {
+    const cookieStore = cookies()
+    cookieStore.delete('token');
+    return {success: true, redirectTo: "/register"};
+}

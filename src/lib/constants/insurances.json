@@ -3,7 +3,7 @@
     "id": 1,
     "title": "شخص ثالث",
     "enabled": true,
-    "url": "third-party-insurance"
+    "url": "third-party-insurance?step=1"
   },
   {
     "id": 2,

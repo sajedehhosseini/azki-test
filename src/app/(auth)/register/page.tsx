@@ -1,4 +1,5 @@
 "use client";
+
 import RegisterForm, {TRegisterFormInputs} from "@/components/organism/RegisterForm";
 import {useTransition} from "react";
 import {useRouter} from "next/navigation";
@@ -11,20 +12,18 @@ export default function RegisterPage() {
     const dispatch = useAppDispatch()
     const router = useRouter();
 
-    const handleRegister = ({password, ...data}: TRegisterFormInputs) => {
+    const handleRegister = async ({password, ...data}: TRegisterFormInputs) => {
         startTransition(async () => {
             try {
-                console.log("handleRegister", data);
                 const result = await registerAction(data);
                 if (result.success) {
+                    await router.push("/");
                     dispatch(setUserInfo(data))
-                    router.push("/");
                 }
             } catch (e) {
                 console.error('Register failed:', e.message);
             }
         })
-
     };
 
     return <RegisterForm onSubmit={handleRegister} isPending={isPending}/>;

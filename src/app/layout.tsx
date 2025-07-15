@@ -2,7 +2,7 @@ import React from "react";
 import type {Metadata} from "next";
 import MainLayout from "@/components/template/MainLayout";
 import "@/styles/index.scss";
-import ReduxProvider from "@/store/ReduxProvider";
+import Providers from "@/app/providers";
 
 
 export const metadata: Metadata = {
@@ -12,13 +12,14 @@ export const metadata: Metadata = {
 
 export default function RootLayout({children}: Readonly<{ children: React.ReactNode; }>) {
     return (
-        <html lang="en">
+        <html lang="fa">
         <body>
-        <ReduxProvider>
+        <Providers>
             <MainLayout>
                 {children}
             </MainLayout>
-        </ReduxProvider>
+        </Providers>
+        <div id="modal-root"/>
         </body>
         </html>
     );
