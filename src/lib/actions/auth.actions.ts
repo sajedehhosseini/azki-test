@@ -1,6 +1,6 @@
 'use server';
 import {cookies} from 'next/headers';
-import type {TRegisterFormInputs} from "@/components/molecule/RegisterForm";
+import type {TRegisterFormInputs} from "@/components/organism/RegisterForm";
 
 export async function registerAction(data: TRegisterFormInputs) {
     const cookieStore = cookies()

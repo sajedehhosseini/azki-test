@@ -28,10 +28,7 @@ export default function RegisterForm({onSubmit, isPending}: TRegisterFormProps) 
 
     return (
         <FormProvider {...methods}>
-            <form
-                onSubmit={methods.handleSubmit(onSubmit)}
-                className="flex justify-center md:justify-end mt-6"
-            >
+            <form onSubmit={methods.handleSubmit(onSubmit)}>
                 <Row className={"max-w-[570px]"}>
                     <Col>
                         <h1 className="text-center text-lg md:text-start md:text-2xl font-bold">

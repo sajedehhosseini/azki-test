@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "title": "شخص ثالث",
+    "enabled": true,
+    "url": "third-party-insurance"
+  },
+  {
+    "id": 2,
+    "title": "بدنه",
+    "enabled": false,
+    "url": "body-insurance"
+  }
+]

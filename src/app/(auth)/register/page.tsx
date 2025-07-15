@@ -1,5 +1,5 @@
 "use client";
-import RegisterForm, {TRegisterFormInputs} from "@/components/molecule/RegisterForm";
+import RegisterForm, {TRegisterFormInputs} from "@/components/organism/RegisterForm";
 import {useTransition} from "react";
 import {useRouter} from "next/navigation";
 import {useAppDispatch} from "@/store/hooks";
