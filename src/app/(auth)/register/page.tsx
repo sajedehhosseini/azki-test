@@ -1,5 +1,5 @@
 "use client";
-import LoginForm, {TLoginFormInputs} from "@/components/molecule/LoginForm";
+import RegisterForm, {TRegisterFormInputs} from "@/components/molecule/RegisterForm";
 import {useState} from "react";
 import {useAppDispatch} from "@/store/hooks";
 import {setUserInfo} from "@/store/slices/authSlice";
@@ -7,12 +7,12 @@ import {setUserInfo} from "@/store/slices/authSlice";
 export default function LoginPage() {
     const [isPending, setIsPending] = useState<boolean>(false);
     const dispatch = useAppDispatch()
-    const handleLogin = ({password, ...data}: TLoginFormInputs) => {
-        console.log("handleLogin", data);
+    const handleRegister = ({password, ...data}: TRegisterFormInputs) => {
+        console.log("handleRegister", data);
         setIsPending(true);
         dispatch(setUserInfo(data))
         setIsPending(false);
     };
 
-    return <LoginForm onSubmit={handleLogin} isPending={isPending}/>;
+    return <RegisterForm onSubmit={handleRegister} isPending={isPending}/>;
 }
