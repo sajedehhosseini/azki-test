@@ -3,7 +3,7 @@ import React, {InputHTMLAttributes} from "react";
 type TInputProps = InputHTMLAttributes<HTMLInputElement> & { error: string | undefined }
 const Input = React.forwardRef<HTMLInputElement, TInputProps>(({error, ...props}, ref) => { //TODO: add ts
     return (
-        <div className="mt-2 relative">
+        <div className="mt-2 mb-1 relative">
             <div
                 className={`bg-white rounded-sm border focus-within:border-indigo-700 ${error ? "border-red-600" : "border-gray-300"}`}
             >
