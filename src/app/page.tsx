@@ -1,6 +1,6 @@
 import React from "react";
 import insurances from '@/lib/constants/insurances.json';
-import InsuranceList from "@/components/organism/InsuranceList";
+import InsuranceList from "@/components/insurance/InsuranceList";
 
 export const dynamic = 'force-static'; //for SSG
 

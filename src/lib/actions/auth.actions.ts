@@ -1,9 +1,9 @@
 'use server';
 import {cookies} from 'next/headers';
-import type {TRegisterFormInputs} from "@/components/organism/RegisterForm";
+import type {TRegisterFormInputs} from "@/components/forms/RegisterForm";
 
 export async function registerAction(data: TRegisterFormInputs) {
-    const cookieStore = cookies()
+    const cookieStore = await cookies()
     cookieStore.set('token', JSON.stringify(data), {
         httpOnly: true,
         path: '/',
@@ -16,7 +16,8 @@ export async function registerAction(data: TRegisterFormInputs) {
 }
 
 export async function logoutAction() {
-    const cookieStore = cookies()
+    const cookieStore = await cookies()
     cookieStore.delete('token');
-    return {success: true, redirectTo: "/register"};
+
+    return {success: true};
 }

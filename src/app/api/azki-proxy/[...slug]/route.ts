@@ -1,6 +1,5 @@
 import {NextRequest, NextResponse} from "next/server";
-import type {NextResponse} from 'next/server'
-
+// Note: The azki-proxy api acts as a proxy for the www.azki.com requests for the purpose of prevent of CROSS Origin errors.
 export async function GET(req: NextRequest) {
     const {pathname} = req.nextUrl;
     const basePath = "/api/azki-proxy/";
@@ -21,15 +20,14 @@ export async function GET(req: NextRequest) {
             } as NextResponse);
         }
 
-        // use default Content-Type "application/octet-stream" (binary) if not found Content-Type from res header
+        // Note: use default Content-Type "application/octet-stream" (binary) if not found Content-Type from res header
         const contentType = res.headers.get("content-type") ||
             "application/octet-stream";
 
-        // default cache for 1 day
+        // Note: Can be set default the default cache for all requests, except fonts, here
         let cacheControl = "public, no-cache, immutable";
-        // let cacheControl = "public, max-age=86400, immutable";
         if (path.includes("fonts")) {
-            //change cache to 7 day for fonts
+            // Note: 7 day cache time for fonts
             cacheControl = "public, max-age=604800, immutable";
         }
 

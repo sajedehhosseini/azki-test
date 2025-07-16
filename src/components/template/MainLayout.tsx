@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "@/components/organism/Header";
+import Header from "@/components/common/header/Header";
 import styles from '@/styles/MainLayout.module.scss';
 
 export default function MainLayout({children}: { children: React.ReactNode; }) {

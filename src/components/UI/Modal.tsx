@@ -2,7 +2,7 @@
 
 import ReactDOM from 'react-dom';
 import React from 'react';
-import Button from "@/components/atoms/Button";
+import Button from "@/components/UI/Button";
 
 type TModalProps = {
     show: boolean;

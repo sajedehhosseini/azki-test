@@ -1,4 +1,6 @@
-import Input from "@/components/atoms/Input";
+'use client';
+
+import Input from "@/components/UI/Input";
 import {useFormContext} from "react-hook-form";
 import type {FieldValues} from "react-hook-form";
 import {InputHTMLAttributes} from "react";

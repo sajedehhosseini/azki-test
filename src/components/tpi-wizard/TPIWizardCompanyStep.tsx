@@ -1,16 +1,18 @@
+'use client';
+
 import React, {useMemo} from "react";
-import Row from "@/components/atoms/Row";
-import Col from "@/components/atoms/Col";
+import Row from "@/components/UI/Row";
+import Col from "@/components/UI/Col";
 import RHFControlledSelect from "@/components/controlled/RHFControlledSelect";
-import Button from "@/components/atoms/Button";
+import Button from "@/components/UI/Button";
 import {useCompanies} from "@/hooks/useCompanies";
-import {TTPIWizardStepsProps} from "@/components/organism/WizardThirdPartyFactory";
+import {TTPIWizardStepsProps} from "@/components/tpi-wizard/WizardThirdPartyFactory";
 
 export default function TPIWizardCompanyStep({value, onNext, onBack}: TTPIWizardStepsProps) {
     const {data: comapnies, isLoading} = useCompanies();
-    const companyOptions = useMemo(() => {
-        const options = comapnies?.map((p) => p.title);
-        return options ?? undefined
+    const companyOptions: string[] = useMemo(() => {
+        const options: string[] = comapnies?.map((p) => p.title);
+        return options ??  []
     }, [comapnies]);
 
     return (

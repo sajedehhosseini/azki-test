@@ -1,11 +1,11 @@
 "use client";
 
 import React from "react";
-import WizardThirdPartyFactory from "@/components/organism/WizardThirdPartyFactory";
+import WizardThirdPartyFactory from "@/components/tpi-wizard/WizardThirdPartyFactory";
 import {FormProvider} from "react-hook-form";
 import {useThirdPartyWizard} from "@/hooks/useThirdPartyWizard";
-import Modal from "@/components/atoms/Modal";
-import TPIWizardReport from "@/components/molecule/TPIWizardReport";
+import Modal from "@/components/UI/Modal";
+import TPIWizardReport from "@/components/tpi-wizard/TPIWizardReport";
 
 export default function WizardThirdPartyInsurance() {
     const {

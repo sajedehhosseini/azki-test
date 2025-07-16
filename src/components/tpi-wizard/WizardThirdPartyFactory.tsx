@@ -1,11 +1,11 @@
 import React from "react";
-import TPIWizardVehicleTypeStep from "@/components/organism/TPIWizardVehicleTypeStep";
-import TPIWizardCompanyStep from "@/components/organism/TPIWizardCompanyStep";
-import TPIWizardDiscountsStep from "@/components/organism/TPIWizardDiscountsStep";
-import {TWizardThirdPartyInsuranceFormInputs} from "@/hooks/useThirdPartyWizard";
+import TPIWizardVehicleTypeStep from "@/components/tpi-wizard/TPIWizardVehicleTypeStep";
+import TPIWizardCompanyStep from "@/components/tpi-wizard/TPIWizardCompanyStep";
+import TPIWizardDiscountsStep from "@/components/tpi-wizard/TPIWizardDiscountsStep";
+import {IThirdPartyInsuranceWizardValue} from "@/lib/types/third-party-insurance-wizard";
 
 export type TTPIWizardStepsProps = {
-    value: TWizardThirdPartyInsuranceFormInputs;
+    value: IThirdPartyInsuranceWizardValue;
     onNext: (data: any) => void;
     onBack?: () => void | undefined;
 }

@@ -1,8 +1,8 @@
-import {TWizardThirdPartyInsuranceFormInputs} from "@/hooks/useThirdPartyWizard";
-import Row from "@/components/atoms/Row";
-import Col from "@/components/atoms/Col";
+import Row from "@/components/UI/Row";
+import Col from "@/components/UI/Col";
+import {IThirdPartyInsuranceWizardValue} from "@/lib/types/third-party-insurance-wizard";
 
-export default function TPIWizardReport({values}: { values: TWizardThirdPartyInsuranceFormInputs }) {
+export default function TPIWizardReport({values}: { values: IThirdPartyInsuranceWizardValue }) {
     return (
         <Row className={'text-stone-600 md:text-md'}>
             <Col xs={8}>نوع خودرو</Col>

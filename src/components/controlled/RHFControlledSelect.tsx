@@ -1,5 +1,7 @@
+'use client';
+
 import {useFormContext, Controller} from "react-hook-form";
-import Select from "@/components/atoms/Select";
+import Select from "@/components/UI/Select";
 import {SelectHTMLAttributes} from "react";
 
 type TRHFControlledSelectProps = {

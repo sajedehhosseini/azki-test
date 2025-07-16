@@ -2,7 +2,7 @@
 
 import {usePathname, useRouter} from "next/navigation";
 import {useAppSelector, useAppDispatch} from "@/store/hooks";
-import Dropdown from "@/components/molecule/Dropdown";
+import Dropdown from "@/components/common/header/Dropdown";
 import {logoutAction} from "@/lib/actions/auth.actions";
 import {resetUserInfo} from "@/store/slices/authSlice";
 import {resetTPIWizardInfo} from "@/store/slices/tpiWizardSlice";
@@ -14,10 +14,8 @@ export default function UserHeaderProfile() {
     const pathname = usePathname();
 
     const logoutUser = async () => {
-        const res = await logoutAction();
-        if (res.redirectTo) {
-            await router.push(res.redirectTo);
-        }
+        await logoutAction();
+        await router.push('/register');
         dispatch(resetUserInfo())
         dispatch(resetTPIWizardInfo())
     }

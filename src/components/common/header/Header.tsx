@@ -1,8 +1,8 @@
 import Link from "next/link";
-import Logo from "@/components/atoms/Logo";
-import UserHeaderProfile from "@/components/molecule/UserHeaderProfile";
-import Row from "@/components/atoms/Row";
-import Col from "@/components/atoms/Col";
+import Logo from "@/components/UI/Logo";
+import UserHeaderProfile from "@/components/common/header/UserHeaderProfile";
+import Row from "@/components/UI/Row";
+import Col from "@/components/UI/Col";
 
 export default function Header() {
     return (

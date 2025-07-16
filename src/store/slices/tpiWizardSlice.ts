@@ -1,15 +1,7 @@
-// store/wizardSlice.ts
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
+import {IThirdPartyInsuranceWizardValue} from "@/lib/types/third-party-insurance-wizard";
 
-interface TTPIWizardState {
-    vehicleType: string;
-    vehicleModel: string;
-    company: string;
-    thirdPartyDiscount: string;
-    driverAccidentDiscount: string;
-}
-
-const initialState: TTPIWizardState = {
+const initialState: IThirdPartyInsuranceWizardValue = {
     vehicleType: "",
     vehicleModel: "",
     company: "",
@@ -21,7 +13,7 @@ const tpiWizardSlice = createSlice({
     name: 'tpi',
     initialState,
     reducers: {
-        setTPIWizardInfo(state, action: PayloadAction<string>) {
+        setTPIWizardInfo(state, action: PayloadAction<IThirdPartyInsuranceWizardValue>) {
             return {...state, ...action.payload};
         },
         resetTPIWizardInfo() {

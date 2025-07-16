@@ -1,5 +1,5 @@
 import React from "react";
-import WizardThirdPartyInsurance from "@/components/organism/WizardThirdPartyInsurance";
+import WizardThirdPartyInsurance from "@/components/tpi-wizard/WizardThirdPartyInsurance";
 
 export default function ThirdPartyInsurancePage() {
     return (

@@ -1,10 +1,12 @@
+'use client';
+
 import React from "react";
 import {FormProvider, useForm} from "react-hook-form";
 import {zodResolver} from "@hookform/resolvers/zod";
-import Button from "@/components/atoms/Button";
+import Button from "@/components/UI/Button";
 import RHFControlledInput from "@/components/controlled/RHFControlledInput";
-import Row from "@/components/atoms/Row";
-import Col from "@/components/atoms/Col";
+import Row from "@/components/UI/Row";
+import Col from "@/components/UI/Col";
 import {registerFormSchema} from "@/lib/schemas";
 
 export type TRegisterFormInputs = {

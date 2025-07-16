@@ -1,24 +1,26 @@
 "use client"
 
 import React, {useMemo} from "react";
-import Row from "@/components/atoms/Row";
-import Col from "@/components/atoms/Col";
-import Button from "@/components/atoms/Button";
+import Row from "@/components/UI/Row";
+import Col from "@/components/UI/Col";
+import Button from "@/components/UI/Button";
 import RHFControlledSelect from "@/components/controlled/RHFControlledSelect";
-import {TTPIWizardStepsProps} from "@/components/organism/WizardThirdPartyFactory";
+import {TTPIWizardStepsProps} from "@/components/tpi-wizard/WizardThirdPartyFactory";
 import {useVehicleTypes} from "@/hooks/useVehicleTypes";
+import {IVehicleCategory} from "@/lib/types/vehicle-types";
 
 export default function TPIWizardVehicleTypeStep({value, onNext, onBack}: TTPIWizardStepsProps) {
     const {data: vehicleTypes, isLoading} = useVehicleTypes();
-    const vehicleTypeOptions = useMemo(() => {
-        const options = vehicleTypes?.map((p) => p.title);
-        return options ?? undefined
+    const vehicleTypeOptions: string[] = useMemo(() => {
+        const options: string[] = vehicleTypes?.map((p) => p.title);
+        return options ??  []
     }, [vehicleTypes]);
 
-    const vehicleModelOptions = useMemo(() => {
+    const vehicleModelOptions: string[] = useMemo(() => {
         if (!value.vehicleType || !vehicleTypes?.length) return []
-        const foundType = vehicleTypes.find((p) => p.title === value.vehicleType);
-        return foundType?.usages?.map((p) => p.title) ?? undefined;
+        const foundType: IVehicleCategory = vehicleTypes.find((p) => p.title === value.vehicleType);
+        const options: string[] = foundType?.usages?.map((p) => p.title);
+        return options ??  []
     }, [vehicleTypes, value.vehicleType]);
 
     return (

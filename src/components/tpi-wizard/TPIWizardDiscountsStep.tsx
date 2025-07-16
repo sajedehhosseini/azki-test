@@ -1,18 +1,19 @@
+'use client';
+
 import {useMemo} from "react";
 import {useThirdDiscounts} from "@/hooks/useThirdDiscounts";
-import {TTPIWizardStepsProps} from "@/components/organism/WizardThirdPartyFactory";
-import Row from "@/components/atoms/Row";
-import Col from "@/components/atoms/Col";
+import {TTPIWizardStepsProps} from "@/components/tpi-wizard/WizardThirdPartyFactory";
+import Row from "@/components/UI/Row";
+import Col from "@/components/UI/Col";
 import RHFControlledSelect from "@/components/controlled/RHFControlledSelect";
-import Button from "@/components/atoms/Button";
+import Button from "@/components/UI/Button";
 
-export default function TPIWizardDiscountsStep({value, onNext, onBack}: TTPIWizardStepsProps) {
+export default function TPIWizardDiscountsStep({value}: Pick<TTPIWizardStepsProps, 'value'>) {
     const {data: thirdDiscounts, isLoading} = useThirdDiscounts();
-    const discountOptions = useMemo(() => {
-        const options = thirdDiscounts?.map((p) => p.title);
-        return options ?? undefined
+    const discountOptions: string[] = useMemo(() => {
+        const options: string[] = thirdDiscounts?.map((p) => p.title);
+        return options ?? []
     }, [thirdDiscounts]);
-
 
     return (
         <Row>
